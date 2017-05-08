@@ -313,15 +313,14 @@ class GameSpace:
 
 		#initialize music
 		self.music = {1:"Music/pallet.wav", 2:"Music/pewter.wav", 3:"Music/celadon.wav",4:"Music/center.wav", 5:"Music/cycling.wav", 6:"Music/The Pit.wav"}
-		self.thugga = {1:"Music/Check.wav"}
+		self.thugga = {"thugga":"Music/Check.wav","rae":"Music/Throw Sum Mo.wav","riff":"Music/Tip Toe Wing in My Jawwwdinz.wav"}
 		self.music_num = randint(1,5)
 
 		#picks the song list
 		if len(sys.argv) == 1:
 			pygame.mixer.music.load(self.music[self.music_num])
-		elif len(sys.argv) == 2 and sys.argv[1] == "thugga":
-			print ("Check - Young Thug")
-			pygame.mixer.music.load(self.thugga[1])
+		elif len(sys.argv) == 2:
+			pygame.mixer.music.load(self.thugga[sys.argv[1]])
 
 		pygame.mixer.music.play(-1)
 
